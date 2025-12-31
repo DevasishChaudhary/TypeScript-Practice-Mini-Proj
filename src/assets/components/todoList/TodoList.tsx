@@ -29,13 +29,14 @@ const TodoList = () => {
 
     function moveUp(index:number):void{
         const tempU= [...tasks];
+        if(index===0) return ;
         [tempU[index],tempU[index-1]]= [tempU[index-1], tempU[index]];
         setTasks(tempU);
-
     }
 
     function moveDown(index:number):void{
         const tempD= [...tasks];
+        if(index===tasks.length-1) return ;
         [tempD[index], tempD[index+1]]= [tempD[index+1], tempD[index]];
         setTasks(tempD);
     }
